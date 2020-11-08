@@ -53,4 +53,18 @@ const movies = [
 ];
 res.status(200).json({
 message: 'Posts fetched succesfully!',
-movies: movies
+movies: movies });
+})
+
+5) Add another route /test that returns a html page when Queried. Your file should called
+index.html.
+SOLUTION
+const express = require('express')
+const app = express()
+const port = 3000
+const path = require('path');
+app.get('/test', (req, res) => {
+res.sendFile(path.join(__dirname + '/index.html'));
+});
+app.listen(port, () =>
+console.log(`Example app listening on port ${port}!`));
