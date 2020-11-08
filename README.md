@@ -94,3 +94,21 @@ Last name:<br>
 </body>
 </html>
 
+8) Add another form to index.html with a two text boxs with firstname and lastname with
+the method POST. Set the form action to “/name” Add a submit button. In main.js,
+change the ”/name” route to accept the name variable as a body encoded POST variable.
+
+const express = require('express');
+const app = express();
+const port = 3000;
+const path = require('path');
+const bodyParser = require("body-parser");
+//Here we are configuring express to use body-parser as middle-ware.
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.post('/name', (req, res) => {
+console.log("post method");
+console.log(req.body.firstname);
+res.send('Hello ' + req.body.firstname + " " + req.body.lastname);
+});
+
