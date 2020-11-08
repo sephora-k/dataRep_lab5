@@ -15,3 +15,23 @@ app.get('/', (req, res) =>
 res.send('Welcome to Data Representation & Querying!'));
 app.listen(port, () =>
 console.log(`Example app listening on port ${port}!`));
+
+3) Add another route point using the Express Framework that will take an argument form
+the url path and return hello “argument” for the url http://localhost:3000/hello
+
+var express = require('express');
+var app = express();
+const express = require('express')
+const app = express()
+const port = 3000
+app.get('/', (req, res) =>
+res.send('Welcome to Data Representation & Querying'))
+app.get('/', (req, res) =>
+res.send('Hello World'))
+app.get('/hello/:name', (req, res) =>
+{
+console.log(req.params.name);
+res.send('Hello ' + req.params.name);
+})
+app.listen(port, () =>
+console.log(`Example app listening on port ${port}!`))
