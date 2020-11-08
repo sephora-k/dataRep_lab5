@@ -1,2 +1,6 @@
-What is Express?
-Express is a fast, unopinionated, minimalist web framework for Node.js
+1) What is Express?
+Express is a minimal and flexible Node.js web application framework
+that provides a robust set of features to develop web and mobile
+applications. It facilitates the rapid development of Node based
+Web applications.
+
