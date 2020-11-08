@@ -68,3 +68,29 @@ res.sendFile(path.join(__dirname + '/index.html'));
 });
 app.listen(port, () =>
 console.log(`Example app listening on port ${port}!`));
+
+6) Add a form to index.html with a two text boxs with firstname and lastname with the
+method GET. Set the form action to “/name” Add a submit button. In server.js, change
+the ”/name” route to accept the name variable as a URL encoded GET variable.
+
+app.get('/name', (req, res) => {
+console.log("get method");
+console.log(req.query.lastname);
+res.send('Hello ' + " " + req.query.firstname + " " + req.query.lastname);
+})
+//index.html
+<html>
+<body>
+<h1>Hello World</h1>
+<form action="/name" target="_blank" method="GET">
+First name:<br>
+<input type="text" name="firstname" value="Mickey">
+<br>
+Last name:<br>
+<input type="text" name="lastname" value="Mouse">
+<br><br>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
